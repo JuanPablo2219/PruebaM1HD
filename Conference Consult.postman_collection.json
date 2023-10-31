@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "43be3be5-d9e0-4c03-a2a9-250eb553924f",
+		"name": "Conference Consult",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30579600"
+	},
+	"item": [
+		{
+			"name": "Get Conference",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/conference",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conference"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Conference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Refla Conferencia\",\r\n    \"description\":\"Bienvenidos a la conferencia\",\r\n    \"city\":\"Ecuador\",\r\n    \"totalAssistants\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/conference",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conference"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Conference",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"title\":\"Conferencia Sudamericano\",\r\n    \"description\":\"Welcome\",\r\n    \"city\":\"Azuay\",\r\n    \"totalAssistants\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/conference",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conference"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Conference",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Conferencia Sudamericano\",\r\n    \"description\": \"Welcome to Conference\",\r\n    \"city\": \"Azuay\",\r\n    \"totalAssistants\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/conference",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conference"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteConference",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/conference/conference/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"conference",
+						"conference",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
