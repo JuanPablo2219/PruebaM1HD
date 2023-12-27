@@ -23,12 +23,18 @@ class AssistantService {
 
     fun save(assistant: Assistant): Assistant {
         try{
+            assistant.fullName?.takeIf { it.trim().isNotEmpty() }
+                ?: throw Exception("El campo FullName no debe ser vacio")
+            assistant.role?.takeIf { it.trim().isNotEmpty() }
+                ?: throw Exception("El campo Role no debe ser vacio")
+            assistant.age?.takeIf { it >= 0 }
+                ?: throw  Exception("El campo Age no debe ser vacio")
             conferenceRepository.findById(assistant.conferenceId)
                 ?: throw Exception("Id del cliente no encontrada")
             return assistantRepository.save(assistant)
         }
         catch (ex:Exception){
-            throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST,ex.message)
         }
     }
 

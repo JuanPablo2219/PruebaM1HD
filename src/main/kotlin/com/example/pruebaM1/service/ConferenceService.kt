@@ -18,9 +18,15 @@ class ConferenceService {
 
     fun save(conference: Conference): Conference {
         try {
+            conference.title?.takeIf { it.trim().isNotEmpty() }
+                ?: throw Exception("El campo Title no debe ser vacio")
+            conference.description?.takeIf { it.trim().isNotEmpty() }
+                ?: throw Exception("El campo Description no debe ser vacio")
+            conference.city?.takeIf { it.trim().isNotEmpty() }
+                ?: throw Exception("El campo City no debe ser vacio")
             return conferenceRepository.save(conference)
         } catch (ex: Exception) {
-            throw ResponseStatusException(HttpStatus.NOT_FOUND, ex.message)
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST, ex.message)
         }
     }
 
